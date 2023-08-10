@@ -163,11 +163,11 @@ kubectl delete -f kube-manifests/
 ## Step-08: Detach ACR from AKS Cluster (Optional)
 ```
 #Set ACR NAME
-export ACR_NAME=acrforaksdemo2
+export ACR_NAME=acrmslab
 echo $ACR_NAME
 
 # Detach ACR with AKS Cluster
-az aks update -n aksdemo2 -g aks-rg2 --detach-acr $ACR_NAME
+az aks update -n aks-demo -g aks-rg --detach-acr $ACR_NAME
 
 # Delete ACR Repository
 Go To Services -> Container Registries -> acrforaksdemo2 -> Delete it
