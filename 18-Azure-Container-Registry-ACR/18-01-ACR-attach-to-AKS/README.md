@@ -96,7 +96,7 @@ docker login $ACR_REGISTRY
 # Tag
 docker tag kube-nginx-acr:v1  $ACR_REGISTRY/$ACR_NAMESPACE/$ACR_IMAGE_NAME:$ACR_IMAGE_TAG
 It replaces as below
-docker tag kube-nginx-acr:v1 acrforaksdemo2.azurecr.io/app1/kube-nginx-acr:v1
+docker tag kube-nginx-acr:v1 acrmslab.azurecr.io/app1/kube-nginx-acr:v1
 
 # List Docker Images to verify
 docker images kube-nginx-acr:v1
