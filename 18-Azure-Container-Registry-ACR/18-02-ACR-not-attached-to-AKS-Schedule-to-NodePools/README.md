@@ -141,6 +141,22 @@ echo "Service principal ID: $SP_APP_ID"
 echo "Service principal password: $SP_PASSWD"
 ```
 
+### Working SCRIPT
+```
+az ad sp list --display-name acr-sp-demo-mslab
+az ad sp delete --id 0c650086-5354-44ef-a3ab-21acb6b441d1
+
+az acr show --name acrmslab --query id --output tsv
+
+az ad sp create-for-rbac --name acr-sp-demo-mslab --scopes /subscriptions/40e63fba-2390-4547-8df9-dcf8d8681392/resourceGroups/aks-rg/providers/Microsoft.ContainerRegistry/registries/acrmslab --role acrpull --query password --output tsv
+
+az ad sp list --display-name acr-sp-demo-mslab --query [].appId --output tsv
+
+SP_PASSWD=pXF8Q~ZmorYEcgJigXZRjrmPjfJiYFbl3jkj6aIl
+SP_APP_ID=0c650086-5354-44ef-a3ab-21acb6b441d1
+```
+
+
 ### OLD SCRIPT - NOT VALID - JUST FOR REFERENCE
 ```sh
 #!/bin/bash
